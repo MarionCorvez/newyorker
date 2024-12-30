@@ -1,50 +1,51 @@
-# React + TypeScript + Vite
+# Project Name
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![html][html5-badge]
+![css][css3-badge]
+![sass][sass-badge]
+![javascript][javascript-badge]
+![react][react-badge]
+![typescript][typescript-badge]
+![vscode][vscode-badge]
 
-Currently, two official plugins are available:
+![Illustration Project Name](https://raw.githubusercontent.com/MarionCorvez/newyorker/public/StFelix-Baldwin-on-the-Galata-Bridge-nonexclusive.webp)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Description
 
-## Expanding the ESLint configuration
+Reproduce the New Yorker's website with React.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Introduction
 
-- Configure the top-level `parserOptions` property like this:
+The New Yorker's website is an exemple of good design and UI, managing multiple cards with simplicity.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Steps
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+0. [x] Step 0: Define the scope: objectives, features and functionalities
+1. [x] Step 1: Set up development environment
+2. [x] Step 2: Identify reusable front-end components and patterns
+3. [ ] Step 3: Design responsive behavior on different devices
+4. [ ] Step 4: Develop static templates
+5. [ ] Step 5: Create and implement styles
+6. [ ] Step 6: Create project's REST API
+7. [ ] Step 7: Develop interactivity and functionality
+8. [ ] Step 8: Consume REST API's
+9. [ ] Step 9: Optimise project: clean & green code
+10. [ ] Step 10: Write project's documentation
+11. [ ] Step 11: Test and deploy
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Main features
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- Slider on mobile
+- Fetch data with JSON API for news
+- Manage sticky navigation
+- Newsletter subscription
+
+<!-- BADGE LINKS -->
+
+[html5-badge]: https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
+[css3-badge]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
+[sass-badge]: https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white
+[javascript-badge]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
+[react-badge]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[typeScript-badge]: https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white&style=for-the-badge
+[vscode-badge]: https://img.shields.io/badge/Made%20with-VSCode-1f425f.svg?style=for-the-badge&logoColor=white

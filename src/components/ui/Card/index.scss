@@ -1,0 +1,341 @@
+@use "../../../styles/abstracts/index.scss" as a;
+
+/* $Cards
+   ==================================== */
+
+.card {
+  height: var(--height);
+
+  :where(.container) {
+    --gap: var(--s-base);
+    box-sizing: border-box;
+    @extend %flex-column;
+  }
+
+  :where(.media-wrapper) {
+    --height: 50vh;
+    height: var(--height);
+    overflow: hidden;
+    border-radius: 2px;
+  }
+
+  :where(.media) {
+    height: var(--height);
+    min-height: 100%;
+    filter: saturate(70%) contrast(90%);
+  }
+
+  :where(.txt-wrapper) {
+    --gap: var(--s-sm);
+    @extend %flex-column;
+  }
+
+  :where(.link-wrapper) {
+    @extend %flex;
+    height: 30px;
+  }
+}
+
+/* $Galleries
+   ==================================== */
+
+.gallery {
+  padding: var(--s-base);
+  margin: var(--s-xxxl) 0;
+}
+
+/* $Gallery Bloc
+   ==================================== */
+
+.gallery-bloc {
+  :where(.panel) {
+    --gap: var(--s-xxl) var(--s-md);
+    @extend %grid;
+    @include a.bp(medium/large) {
+    }
+  }
+
+  :where(.details) {
+    max-width: 80%;
+  }
+
+  :where(.media) {
+    --height: 50vh;
+  }
+}
+
+/* $Gallery List
+   ==================================== */
+
+.gallery-list {
+  :where(.panel) {
+    --gap: var(--s-xxl) var(--s-md);
+    @extend %flex-column;
+  }
+
+  :where(.container) {
+    @include a.bp(medium/large) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    :where(.link-wrapper) {
+      margin-top: auto;
+    }
+  }
+}
+
+/* $Gallery Auto
+   ==================================== */
+
+.gallery-auto {
+  :where(.panel) {
+    --width: 400px;
+    --gap: var(--s-md);
+    @extend %grid-auto;
+  }
+
+  // + if gallery-background
+  /*   :where(.card) {
+    --height: 400px;
+  } */
+
+  // - if gallery-background
+  :where(.media-wrapper) {
+    --height: 300px;
+  }
+}
+
+/* $Card Background
+   ==================================== */
+
+.card--background {
+  :where(.container) {
+    --justify: end;
+    height: var(--height);
+    min-height: 0px;
+    position: relative;
+    text-shadow: 1px 1px var(--carbon);
+  }
+
+  :where(.media-wrapper) {
+    --height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  :where(.txt-wrapper) {
+    color: var(--white);
+    padding: var(--s-base);
+    align-items: start;
+  }
+
+  :where(.details) {
+    max-width: 400px;
+  }
+}
+
+/* $Gallery Area
+   ==================================== */
+
+.gallery-area {
+  :where(.panel) {
+    --gap: var(--s-md);
+    @extend %grid;
+
+    :where(.card) {
+      --height: 400px;
+    }
+
+    @media screen and (width > 900px) {
+      grid-template-areas:
+        "a b"
+        "a c";
+      :where(.card:first-child) {
+        --height: 100%;
+        grid-area: a;
+      }
+      :where(.card:nth-child(2)) {
+        grid-area: b;
+      }
+      :where(.card:last-child) {
+        grid-area: c;
+      }
+    }
+  }
+}
+
+/* $From Simple Gallery Container
+   ==================================== */
+
+.gallery-scroll {
+  :where(.panel) {
+    --width: 400px;
+    --height: 400px;
+    --gap: var(--s-md);
+    @extend %grid-auto;
+
+    :where(.title) {
+      max-width: 80%;
+      @media screen and (width >= 1400px) {
+        grid-row: span 3;
+      }
+    }
+    :where(.cta-wrapper) {
+      position: relative;
+      @extend %flex--centered;
+      height: var(--height);
+      background-color: var(--thamar-black);
+    }
+    :where(.cta-media) {
+      max-width: 160px;
+      max-height: 160px;
+      margin: 0 auto;
+    }
+  }
+}
+
+/* $To Horizontal Scroll Gallery
+   ==================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  @include a.bp(large) {
+    @supports (animation-timeline: view()) {
+      @keyframes move {
+        to {
+          transform: translateX(calc(-100% + 100vw));
+        }
+      }
+      .gallery-scroll {
+        height: 500vh;
+        overflow: visible;
+        view-timeline-name: --scroll-container-tl;
+        view-timeline-axis: block;
+        display: flex;
+        padding-right: 0;
+      }
+
+      .container-sticky {
+        height: 100vh;
+        position: sticky;
+        top: 0;
+        width: 100vw;
+        overflow-x: hidden;
+
+        :where(.panel) {
+          width: 420vmax;
+          will-change: transform;
+          animation-timing-function: linear;
+          animation-fill-mode: forwards;
+          animation-play-state: running;
+          animation-name: move;
+          animation-timeline: --scroll-container-tl;
+          animation-range: contain 0% contain 100%;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          padding: var(--s-lg) 0;
+        }
+
+        :where(.title) {
+          width: 400px;
+          align-self: baseline;
+        }
+
+        :where(.card) {
+          --height: calc(100vh - 2 * var(--s-lg));
+          width: 75vw;
+        }
+
+        :where(.cta-wrapper) {
+          width: 400px;
+        }
+      }
+    }
+  }
+}
+
+/* $Gallery static
+   ==================================== */
+
+.gallery-static {
+  margin-top: 0;
+  :where(.panel) {
+    --cols: 1;
+    --gap: var(--s-sm);
+    @extend %grid;
+    @include a.bp(medium) {
+      --cols: 2;
+    }
+    @include a.bp(large) {
+      --cols: 4;
+    }
+  }
+
+  :where(.txt-wrapper) {
+    --gap: var(--s-sm);
+    text-shadow: 1px 1px var(--carbon);
+  }
+
+  :where(.details) {
+    max-width: 80%;
+  }
+}
+
+/* $Specific Cards
+   ==================================== */
+
+// with .gallery-background
+.card--highlighted {
+  --height: 90vh;
+  @include a.bp(medium/large) {
+    grid-column: span 2;
+  }
+}
+
+// with .gallery-background
+.card--sticky {
+  --height: 100vh;
+  :where(.container) {
+    --justify: baseline;
+  }
+  :where(.txt-wrapper) {
+    position: sticky;
+    top: 0;
+    @include a.bp(medium/large) {
+      max-width: 50%;
+    }
+  }
+}
+
+.card--cover {
+  --height: 100vh;
+}
+
+.card--stat {
+  --height: 50vh;
+}
+
+.card-row {
+}
+.card-col {
+}
+
+.card-hero {
+}
+.card-split {
+}
+
+.card-highlight {
+}
+.card-feature {
+}
+
+.card--rev {
+}
+
+.card--float {
+}

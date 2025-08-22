@@ -1,0 +1,17 @@
+@use "../../styles/abstracts/index.scss" as a;
+
+// section
+.parallax-container {
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-image: url(/images/maria-tarasova-1600.avif);
+  background-position: center;
+  background-size: cover;
+}
+
+// section
+.buffer {
+  width: 100%;
+  min-height: 60vh;
+  background-color: var(--color);
+}

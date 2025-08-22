@@ -1,0 +1,100 @@
+@use "../../styles/abstracts/index.scss" as a;
+
+.newsletter-container {
+  --gap: var(--s-base);
+  border-top: 1px solid #ffffff1a;
+  font-size: var(--f-sm);
+  padding: var(--s-base);
+}
+
+.insights-container {
+  --cols: 3fr 1fr;
+  @extend %grid-fr;
+  grid-template-areas:
+    "list image"
+    "text .";
+  margin: var(--s-base) 0;
+
+  :where(ul) {
+    grid-area: list;
+    @include a.bp(medium/large) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+  }
+
+  :where(li) {
+    font-size: var(--f-xxxl);
+  }
+
+  li:not(:last-child)::after {
+    @include a.bp(medium/large) {
+      content: "\00a0 /\00a0";
+      display: inline-block;
+    }
+  }
+
+  :where(p) {
+    grid-area: text;
+    font-size: var(--f-md);
+    max-width: 600px;
+  }
+
+  :where(img) {
+    grid-area: image;
+    object-fit: contain;
+    place-self: start end;
+    max-width: clamp(75px, calc(55px + 6.25vw), 130px);
+    max-height: clamp(74px, calc(54.364px + 6.136vw), 128px);
+  }
+}
+
+.form-container {
+  --cols: 3fr 1fr;
+  --rows: 1fr auto;
+  --gap: var(--s-sm);
+  @extend %grid-fr;
+  grid-template-areas:
+    "form ."
+    "message .";
+}
+
+.newsletter-form {
+  --justify: space-between;
+  --gap: var(--s-sm);
+  font-size: var(--f-sm);
+  grid-area: form;
+  @extend %flex;
+  max-width: 700px;
+
+  :where(input) {
+    flex-grow: 1;
+    padding-left: 1rem;
+    height: 50px;
+    background-color: var(--carbon);
+    border: 1px solid transparent;
+    transition: all 0.2s ease-out;
+  }
+  input:hover {
+    border: 1px solid var(--white);
+  }
+  input::placeholder {
+    color: var(--speed-light);
+  }
+  :where(button) {
+    transition: border-color 0.2s ease-out;
+    border: 1px solid transparent;
+    height: 50px;
+    padding: 0 10px;
+  }
+  button:hover {
+    --foreground: var(--white);
+    --background: var(--thamar-black);
+    border: 1px solid var(--white);
+  }
+}
+
+.form-message {
+  grid-area: message;
+}

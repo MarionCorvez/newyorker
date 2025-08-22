@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1001st",
+    "stat": "5000 +",
+    "content": "trees planted",
+    "image": "/images/stats/treas-planted.avif",
+    "alt": "Picture of a pine forest"
+  },
+  {
+    "id": "1002st",
+    "stat": "1000 +",
+    "content": "square metres of sea ice saved",
+    "image": "/images/stats/ice-saved.avif",
+    "alt": "Picture of a sea ice"
+  },
+  {
+    "id": "1003st",
+    "stat": "850k +",
+    "content": "miles in a car avoided",
+    "image": "/images/stats/miles-avoided.avif",
+    "alt": "Picture of a road above forest"
+  },
+  {
+    "id": "1004st",
+    "stat": "250 +",
+    "content": "long haul flights avoided",
+    "image": "/images/stats/flights-avoided.avif",
+    "alt": "Picture of an airplane"
+  }
+]

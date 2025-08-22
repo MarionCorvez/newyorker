@@ -1,0 +1,30 @@
+@use "../../styles/abstracts/index.scss" as a;
+
+.logo-clouds {
+  background-color: var(--dire-wolf);
+
+  padding: var(--s-xxxl) var(--s-base);
+
+  :where(.title) {
+    text-wrap: initial;
+    color: var(--white);
+    margin-bottom: var(--s-xxl);
+    @include a.bp(medium/large) {
+      max-width: 75%;
+    }
+  }
+
+  :where(.container) {
+    --width: 250px;
+    --height: auto;
+    --gap: var(--s-sm);
+    @extend %grid-auto;
+
+    :where(img) {
+      filter: invert(1);
+      opacity: 1;
+      border-radius: 2px;
+      background-color: #0000000d;
+    }
+  }
+}

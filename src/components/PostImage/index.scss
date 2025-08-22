@@ -1,0 +1,10 @@
+@use "../../styles/abstracts/index.scss" as a;
+
+.postimage-container {
+  padding: var(--s-base);
+  width: 100%;
+
+  :where(img) {
+    height: 100vh;
+  }
+}

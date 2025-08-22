@@ -1,0 +1,76 @@
+@use "../../styles/abstracts/index.scss" as a;
+
+aside {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: none;
+  //display: block;
+  //transform: translateY(115px);
+}
+
+.cookie-banner {
+  --gap: var(--s-base);
+  --inset: var(--s-base);
+  --width: 320px;
+  font-size: var(--f-sm);
+  @extend %flex-auto;
+  :where(.link) {
+    --foreground: var(--thamar-black);
+    border-bottom: 1px solid var(--black);
+  }
+
+  :where(.content) {
+    --foreground: var(--kettleman);
+    @include a.bp(small) {
+      text-align: center;
+    }
+  }
+
+  :where(.actions) {
+    --gap: var(--s-sm);
+    --justify: center;
+    @extend %flex;
+    @include a.bp(medium/large) {
+      --justify: flex-end;
+    }
+    :where(.button) {
+      border: 1px solid var(--black);
+      padding: 0.625rem 1.25rem;
+      min-width: clamp(5.75rem, calc(4.659rem + 5.455vw), 8.75rem);
+    }
+  }
+}
+
+/*
+
+.panel {}
+
+.card {
+
+	:where(.container) {}
+	@container card-container (800px <= width <= 1200px) {}
+	@container card-container (width > 1200px) {}
+	:where(.txt-wrapper) {}
+	:where(.content) {}
+	:where(.cat) {}
+	:where(.head) {}
+	:where(.subhead) {}
+	:where(.details) {}
+	:where(.author) {}
+	:where(.tag) {}  	
+
+  :where(.media-wrapper) {}
+	:where(.media) {}
+
+	:where(.button) {}
+	:where(.icon-wrapper) {}
+	:where(.icon) {}
+	:where(.link) {}
+
+	&:where(.card--innered) { colors }
+	&:where(.card--featured) { colors }
+
+}
+
+*/

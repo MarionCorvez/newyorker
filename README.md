@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# The New Yorker
 
-## Getting Started
+![html][html5-badge]
+![css][css3-badge]
+![sass][sass-badge]
+![react][react-badge]
+![typescript][typescript-badge]
+![next][next-badge]
 
-First, run the development server:
+![Illustration The New Yorker](https://raw.githubusercontent.com/MarionCorvez/newyorker/refs/heads/main/public/readme-cover.webp)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Description
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Reproduce the New Yorker's website with React and Next.js.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Introduction
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The New Yorker's website is an example of good design and UI, managing multiple cards with simplicity.
 
-## Learn More
+## Steps
 
-To learn more about Next.js, take a look at the following resources:
+0. [x] Step 0: Define the scope: objectives, features and functionalities
+1. [ ] Step 1: Set up development environment
+2. [ ] Step 2: Identify reusable front-end components and patterns
+3. [ ] Step 3: Design responsive behavior on different devices
+4. [ ] Step 4: Develop static templates
+5. [ ] Step 5: Create and implement styles
+6. [ ] Step 6: Create project's REST API
+7. [ ] Step 7: Develop interactivity and functionality
+8. [ ] Step 8: Consume REST API's
+9. [ ] Step 9: Optimise project: clean & green code
+10. [ ] Step 10: Write project's documentation
+11. [ ] Step 11: Test and deploy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Main features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Carousel on mobile
+- Data fetching with JSON API for news
+- Sticky navigation
+- Conditional rendering of components
+- Newsletter subscription
+- Mobile menu
 
-## Deploy on Vercel
+<!-- BADGE LINKS -->
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[html5-badge]: https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
+[css3-badge]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
+[sass-badge]: https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white
+[javascript-badge]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
+[react-badge]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[typeScript-badge]: https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white&style=for-the-badge
+[next-badge]: https://img.shields.io/badge/Next.js-000000?logo=next.js&logoColor=white&style=for-the-badge

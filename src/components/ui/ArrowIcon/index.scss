@@ -1,0 +1,39 @@
+@use "../../../styles/abstracts/index.scss" as a;
+
+:where(.icon-wrapper) {
+  @extend %flex--centered;
+  border-radius: 25px;
+  border: 1px solid currentColor;
+  width: var(--width);
+  height: var(--height);
+}
+
+:where(.icon--lg) {
+  --width: 40px;
+  --height: 40px;
+  position: absolute;
+  color: var(--cold-morning);
+}
+
+:where(.icon--sm) {
+  --width: 24px;
+  --height: 24px;
+  transition: transform 0.4s ease;
+}
+
+:where(.icon-wrapper:hover) {
+  color: var(--carbon);
+  background-color: var(--cold-morning);
+  border: none;
+  @media (prefers-reduced-motion: no-preference) {
+    transform: scale(1.5, 1.5);
+  }
+}
+
+:where(.icon) {
+  padding: 4px 8px;
+}
+
+:where(.icon--sm:hover) {
+  cursor: pointer;
+}

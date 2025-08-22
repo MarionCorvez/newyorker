@@ -1,0 +1,43 @@
+@use "../../styles/abstracts/index.scss" as a;
+
+.footer {
+  @include a.bp(medium/large) {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.footer-container {
+  --gap: var(--s-base);
+  font-size: var(--f-sm);
+  @extend %flex-mobile;
+  padding: var(--s-base);
+  @include a.bp(medium/large) {
+    --justify: space-between;
+    align-content: end;
+  }
+
+  .links-container {
+    --cols: 2;
+    @extend %grid;
+    @include a.bp(medium/large) {
+      width: 80%;
+      align-content: end;
+    }
+    @include a.bp(large) {
+      --cols: 4;
+    }
+  }
+
+  .social-container {
+    @extend %flex;
+    @include a.bp(small) {
+      padding-bottom: 2rem;
+    }
+    @include a.bp(medium/large) {
+      align-self: flex-end;
+    }
+  }
+}

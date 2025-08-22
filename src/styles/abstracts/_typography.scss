@@ -1,0 +1,94 @@
+/*
+  ========================================
+  $Typography
+  ========================================
+*/
+
+:root {
+  --f-sm: clamp(0.88rem, 0.34vi + 0.79rem, 1.06rem); // 14
+  --f-base: clamp(0.94rem, 0.45vi + 0.82rem, 1.19rem); // body - 15
+  --f-md: clamp(1.13rem, 0.11vi + 1.1rem, 1.19rem); // h4 - 18
+  --f-lg: clamp(1.56rem, 1vi + 1.31rem, 2.11rem); // h3 - 25
+  --f-xl: clamp(2rem, 0.34vi + 1.91rem, 2.19rem); // h2 - 32
+  --f-xxl: clamp(2.5rem, 0.76vi + 2.31rem, 2.92rem); // h1 - 40
+  --f-xxxl: clamp(1.56rem, 1.7vi + 1.14rem, 2.5rem); // 25 - 40
+}
+
+html {
+  font-family: var(--f-neutraface);
+  font-size: 100%;
+  font-size: 16px;
+  font-synthesis: none;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+body {
+  font-size: var(--f-base);
+  font-weight: 200;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+  //line-height: 1.1;
+  font-weight: inherit;
+  /* Avoid text overflow */
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--f-tny);
+  /* Stronger effect than 'pretty'. Attempts to make each line of text the same length */
+  text-wrap: balance;
+}
+
+.card {
+  :where(.head) {
+    font-family: var(--f-irvin);
+    text-transform: uppercase;
+  }
+}
+
+p,
+strong,
+li,
+figcaption {
+  /* Prevents orphans (ensures the final line of text has at least two words). */
+  text-wrap: pretty;
+}
+
+.heading-1 {
+  font-size: var(--f-xxl);
+}
+
+.heading-2 {
+  font-size: var(--f-xl);
+}
+
+.heading-3 {
+  font-size: var(--f-lg);
+}
+
+.heading-4 {
+  font-size: var(--f-md);
+}

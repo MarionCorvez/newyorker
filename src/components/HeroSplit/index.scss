@@ -1,0 +1,53 @@
+@use "../../styles/abstracts/index.scss" as a;
+
+.hero-split {
+  :where(.container) {
+    --gap: var(--s-base);
+    @extend %grid;
+    height: 100vh;
+    min-height: 0px;
+    position: relative;
+    text-shadow: 1px 1px var(--carbon);
+    @include a.bp(large) {
+      --cols: 2;
+    }
+  }
+
+  :where(.media-wrapper) {
+    color: var(--white);
+    @media screen and (width <= 1024px) {
+      position: absolute;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  :where(.media) {
+    filter: saturate(80%) contrast(90%);
+    position: relative;
+    height: 100vh;
+  }
+
+  :where(.link-wrapper) {
+    --gap: var(--s-sm);
+    @extend %flex;
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    padding: var(--s-base);
+    @media screen and (width <= 1024px) {
+      display: none;
+    }
+  }
+
+  :where(.txt-wrapper) {
+    @extend %flex-column;
+    --justify: end;
+    padding: var(--s-base);
+
+    @media screen and (width <= 1024px) {
+      z-index: 1;
+      color: var(--white);
+    }
+  }
+}

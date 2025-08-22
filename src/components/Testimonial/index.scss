@@ -1,0 +1,21 @@
+@use "../../styles/abstracts/index.scss" as a;
+
+.section-testimonial {
+  --gap: var(--s-base);
+
+  @extend %grid;
+  padding: var(--s-base);
+  margin-bottom: var(--s-xxxl);
+
+  .testimonial-blockquote {
+    margin: 0;
+  }
+
+  @include a.bp(medium/large) {
+    --cols: 2;
+    :where(.testimonial-blockquote),
+    :where(.testimonial-author) {
+      grid-column-start: 2;
+    }
+  }
+}

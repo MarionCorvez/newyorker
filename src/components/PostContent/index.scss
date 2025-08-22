@@ -1,0 +1,53 @@
+@use "../../styles/abstracts/index.scss" as a;
+
+.section-content {
+  --gap: var(--s-base);
+  @extend %grid;
+  align-items: baseline;
+  padding: var(--s-xxxl) var(--s-base);
+
+  @include a.bp(medium/large) {
+    --cols: 2;
+  }
+
+  .panel-content {
+    --cols: 1;
+    --gap: var(--s-base);
+    @extend %grid;
+
+    @include a.bp(large) {
+      --cols: 2;
+      :where(.intro),
+      :where(.txt-wrapper) {
+        grid-column: span 2;
+      }
+    }
+  }
+
+  :where(.txt-wrapper) {
+    display: grid;
+    gap: var(--s-base);
+  }
+
+  :where(.link-wrapper) {
+    display: flex;
+    gap: var(--s-base);
+  }
+
+  :where(.list-assets) {
+    border-top: 2px solid currentColor;
+
+    @include a.bp(large) {
+      display: grid;
+      gap: 0 var(--s-base);
+      grid-template-columns: 1fr 1fr;
+    }
+
+    :where(li) {
+      padding: var(--s-sm) 0;
+      color: light-dark(currentColor, #dadadacc);
+      border-bottom: 1px solid;
+      border-bottom-color: light-dark(currentColor, #ffffff1a);
+    }
+  }
+}

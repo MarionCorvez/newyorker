@@ -39,7 +39,7 @@ export default async function CasesFeatured() {
         title={data.title}
         cat={""}
         image={data.image}
-        author={"John Cassidy"}
+        author={data.author}
         url={`/case-studies/${data.id}`}
       />
     )

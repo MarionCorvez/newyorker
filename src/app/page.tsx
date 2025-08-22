@@ -1,8 +1,6 @@
-import StaticCover from "@/components/StaticCover";
-import CasesFeatured from "@/components/CasesFeatured";
-import LogoClouds from "@/components/LogoClouds";
-import PostsFeatured from "@/components/PostsFeatured";
 import Hero from "@/components/Hero";
+import StaticCover from "@/components/StaticCover";
+import Highlight from "@/components/Highlight";
 
 export default function Home() {
   const data = {
@@ -19,9 +17,7 @@ export default function Home() {
         width={1600}
         height={900}
       />
-      <CasesFeatured />
-      <LogoClouds head="" />
-      <PostsFeatured />
+      <Highlight />
     </>
   );
 }

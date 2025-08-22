@@ -21,13 +21,11 @@ export default async function PostsFeatured() {
       width: number;
       alt: string;
       title: string;
+      cat: string;
       image: string;
       url: string;
-      cta: string;
-      arrow: string;
+      author: string;
       cls: string;
-      isFeatured: boolean;
-      isHighlighted: boolean;
     }) => (
       <Card
         cls="card card--background"
@@ -38,12 +36,9 @@ export default async function PostsFeatured() {
         width={data.width}
         alt={data.alt}
         title={data.title}
+        cat={data.cat}
         image={data.image}
-        cta="Read article"
-        arrow="icon--sm"
         url={`/articles/${data.id}`}
-        isFeatured
-        isHighlighted
       />
     )
   );

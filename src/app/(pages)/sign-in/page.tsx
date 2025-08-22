@@ -1,5 +1,4 @@
 import HeroSplit from "@/components/HeroSplit";
-import CardStat from "@/components/CardStat";
 import Highlight from "@/components/Highlight";
 
 const data = {
@@ -29,7 +28,6 @@ export default function SignIn() {
         label={data.link.label}
       />
       <Highlight />
-      <CardStat />
     </>
   );
 }

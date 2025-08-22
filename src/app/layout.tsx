@@ -7,7 +7,6 @@ import "@/styles/globals.scss";
 
 import Header from "@/partials/Header";
 import Footer from "@/partials/Footer";
-import CookieBanner from "@/partials/CookieBanner";
 
 const neutraface = Neutraface({
   src: "../../public/fonts/neutraface-newyorker.woff2",
@@ -51,7 +50,6 @@ export default function RootLayout({
       <body>
         <Header />
         <main>{children}</main>
-        <CookieBanner />
         <Footer />
       </body>
     </html>

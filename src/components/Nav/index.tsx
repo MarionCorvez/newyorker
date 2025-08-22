@@ -81,7 +81,7 @@ export default function Nav() {
                 className={`link ${
                   pathname === "/subscribe" ? "is--active" : ""
                 }`}
-                href={"/Subscribe"}
+                href={"/subscribe"}
                 aria-label="Access to Subscribe page"
               >
                 Subscribe

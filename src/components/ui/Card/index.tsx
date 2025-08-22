@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface CardProps {
-  id: string;
+  id: number;
   content: string;
   height: number;
   width: number;

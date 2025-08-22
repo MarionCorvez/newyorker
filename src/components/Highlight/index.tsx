@@ -33,7 +33,7 @@ export default async function Highlight() {
   // const dataList = aviation.map(
   const dataList = latest.map(
     (data: {
-      id: string;
+      id: number;
       content: string;
       height: number;
       width: number;

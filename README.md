@@ -20,7 +20,7 @@ The New Yorker's website is an example of good design and UI, managing multiple 
 ## Steps
 
 0. [x] Step 0: Define the scope: objectives, features and functionalities
-1. [ ] Step 1: Set up development environment
+1. [x] Step 1: Set up development environment
 2. [ ] Step 2: Identify reusable front-end components and patterns
 3. [ ] Step 3: Design responsive behavior on different devices
 4. [ ] Step 4: Develop static templates

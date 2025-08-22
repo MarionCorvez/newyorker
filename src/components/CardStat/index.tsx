@@ -10,7 +10,7 @@ export default async function CardStat() {
 
   const dataList = datas.map(
     (data: {
-      id: string;
+      id: number;
       stat: string;
       content: string;
       image: string;

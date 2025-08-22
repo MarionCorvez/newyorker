@@ -32,6 +32,7 @@ export default async function PostsFeatured() {
         key={data.id}
         id={data.id}
         content={data.content}
+        author={data.author}
         height={data.height}
         width={data.width}
         alt={data.alt}

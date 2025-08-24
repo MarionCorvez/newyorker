@@ -1,5 +1,51 @@
 [
   {
+    "id": "5948217",
+    "category": "Photo Booth",
+    "title": "The Futility of Simulating Nature",
+    "isFeatured": false,
+    "isHighlighted": false,
+    "isHero": false,
+    "content": "In “The Anthropocene Illusion,” the photographer Zed Nelson captures how the natural world has been reproduced, reshuffled, and repackaged, sold to visitors in the form of spectacle.",
+    "image": "/images/kolbert-nelson.avif",
+    "alt": "The Futility of Simulating Nature",
+    "width": "768",
+    "height": "576",
+    "author": "Elizabeth Kolbert",
+    "date": "2025-08-24"
+  },
+  {
+    "id": "5948218",
+    "category": "The Lede",
+    "title": "Adam Friedland’s Comedy of Discomforts",
+    "isFeatured": false,
+    "isHighlighted": false,
+    "isHero": false,
+    "content": "His rendition of the talk show is innately subversive, at direct odds with the squeaky-clean, white-bread humor that is typical of its cable counterpart.",
+    "image": "/images/adam-friedland-show.avif",
+    "alt": "Adam Friedland with two vintagelooking swivel chairs with a white desk",
+    "width": "2560",
+    "height": "1916",
+    "author": "Brady Brickner-Wood",
+    "date": "2025-08-23"
+  },
+  {
+    "id": "5948219",
+    "category": "Essay",
+    "title": "What Killed the Two-State Solution?",
+    "isFeatured": false,
+    "isHighlighted": false,
+    "isHero": false,
+    "content": "How deceit, delusion, and the inexorable pull of the past have transformed an idea once seen as a possible means to end the Israeli-Palestinian conflict into a dangerous gimmick.",
+    "image": "/images/agha-malley-tomorrow-yesterday-excerpt.avif",
+    "alt": "Illustration of a solider firing a grenade launcher into a endless reflection",
+    "width": "1600",
+    "height": "900",
+    "author": "Hussein Agha",
+    "date": "2025-08-22"
+  },
+
+  {
     "id": "5948220",
     "category": "Flash Fiction",
     "title": "Missing Sheep",
@@ -175,36 +221,6 @@
     "width": "1200",
     "height": "630"
   },
-  {
-    "id": "54",
-    "title": "By Association Only sponsors Vervaunt’s Pulse Ecommerce Summit for the third year",
-    "isFeatured": true,
-    "content": "Last week London-based ecommerce consultancy and paid media agency Vervaunt hosted the third Pulse Ecommerce Summit at The Brewery in London. Here are the highlights.",
-    "image": "/images/articles/pulse-summit-2024.avif",
-    "alt": "Picture of the third Pulse Ecommerce Summit",
-    "width": "1200",
-    "height": "630"
-  },
-
-  {
-    "id": "42",
-    "title": "Thirteen bridal wear brands on Shopify",
-    "isFeatured": true,
-    "image": "/images/articles/bridal-p-500.avif",
-    "alt": "Picture of Thirteen bridal",
-    "width": "500",
-    "height": "291"
-  },
-  {
-    "id": "43",
-    "title": "Bespoke Story Chain visualiser for jewellery brand Astrid & Miyu",
-    "isFeatured": true,
-    "image": "/images/articles/miyu-p-500.avif",
-    "alt": "Picture of Astrid & Miyu project",
-    "width": "500",
-    "height": "312"
-  },
-
   {
     "id": "44",
     "title": "Self-Portrait",

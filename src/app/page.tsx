@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
-import StaticCover from "@/components/StaticCover";
+import NavSecondary from "@/components/NavSecondary";
 import Highlight from "@/components/Highlight";
+import PostsFeatured from "@/components/PostsFeatured";
 
 export default function Home() {
   const data = {
@@ -10,13 +11,8 @@ export default function Home() {
 
   return (
     <>
-      <Hero title={data.title} content={undefined} active={""} txt={""} />
-      <StaticCover
-        src="/images/carson-missing-sheep.avif"
-        alt="Picture of Maria Tarasova"
-        width={1600}
-        height={900}
-      />
+      <Hero />
+      <PostsFeatured />
       <Highlight />
     </>
   );

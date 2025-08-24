@@ -1,26 +1,37 @@
 @use "../../styles/abstracts/index.scss" as a;
 
+//Primary
+
 .nav-container {
-  --cols: 3;
+  /*   --cols: 3;
   --gap: var(--s-md);
   font-size: var(--f-sm);
   @extend %grid;
+
+  :where(.logo-wrapper) {
+    grid-column: 2;
+    justify-self: center;
+  }
   :where(.logo) {
     width: clamp(9.7rem, calc(7.155rem + 12.727vw), 16.7rem);
     height: clamp(0.88rem, calc(0.655rem + 1.127vw), 1.5rem);
   }
+  :where(.button) {
+    width: 3rem;
+    color: currentColor;
+  } */
 }
 
-.nav-main {
-  --gap: var(--s-base);
-  @extend %flex;
-  @media screen and (800px <= width <= 1280px) {
-    justify-self: end;
+.nav-primary {
+  display: none;
+
+  @include a.bp(large) {
+    grid-column: 3;
+    display: flex;
+    justify-content: end;
+    gap: var(--s-base);
   }
-  @media screen and (width > 1280px) {
-    //--justify: space-between;
-    justify-self: end;
-  }
+
   :where(.link) {
     padding-bottom: 1px;
     border-bottom: 1px solid transparent;
@@ -29,9 +40,7 @@
   :where(.is--active) {
     border-bottom: 1px solid currentColor;
   }
-  :where(.is--self) {
-    @include a.bp(large) {
-      margin-left: auto;
-    }
+  :where(.link:last-child) {
+    border-bottom: none;
   }
 }

@@ -42,7 +42,7 @@ export default async function Card({
             />
           </div>
           <div className="txt-wrapper">
-            {cat && <p>{cat}</p>}
+            {cat && <p className="cat">{cat}</p>}
             <h3 className="head heading-3">{title}</h3>
             {content && <p className="details">{content}</p>}
             {author && (

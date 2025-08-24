@@ -16,18 +16,21 @@ const data = {
 export default function SignIn() {
   return (
     <>
-      <HeroSplit
-        theme={data.theme}
-        title={data.title}
-        image={data.image}
-        alt={data.alt}
-        width={data.width}
-        height={data.height}
-        link={data.link}
-        href={data.link.href}
-        label={data.link.label}
-      />
-      <Highlight />
+      <section className="section--top">
+        <h1 className="heading-1">Books & Culture</h1>
+        <HeroSplit
+          theme={data.theme}
+          title={data.title}
+          image={data.image}
+          alt={data.alt}
+          width={data.width}
+          height={data.height}
+          link={data.link}
+          href={data.link.href}
+          label={data.link.label}
+        />
+        <Highlight />
+      </section>
     </>
   );
 }

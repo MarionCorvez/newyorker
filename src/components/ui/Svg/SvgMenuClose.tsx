@@ -9,8 +9,8 @@ const SvgMenuClose = (
     fill="none"
     {...props}
   >
-    <g clipPath="url(#a)" stroke="#000">
-      <path d="m1 1 14 14M15 1 1 15"></path>
+    <g clipPath="url(#a)" stroke="currentColor">
+      <path d="m1 1 14 14M15 1 1 15" fill="currentColor"></path>
     </g>
   </svg>
 );

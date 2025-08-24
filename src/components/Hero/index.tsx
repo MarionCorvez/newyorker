@@ -1,23 +1,51 @@
-interface HeroProps {
-  content: any;
-  active: string;
-  txt: string;
-  title: string;
-}
+import { promises as fs } from "fs";
+import Card from "@/components/ui/Card";
 
-export default function Hero({ content, active, txt, title }: HeroProps) {
+export default async function Hero() {
+  const file = await fs.readFile(
+    process.cwd() + "/src/lib/data/posts.json",
+    "utf8"
+  );
+  const datas = JSON.parse(file);
+
+  const isFeatured = datas.filter(
+    (data: { isFeatured: boolean }) => data.isFeatured === true
+  );
+
+  const dataList = isFeatured.map(
+    (data: {
+      id: number;
+      content: string;
+      height: number;
+      width: number;
+      alt: string;
+      title: string;
+      category: string;
+      image: string;
+      url: string;
+      author: string;
+      cls: string;
+    }) => (
+      <Card
+        cls="card-hero card-background theme--background"
+        key={data.id}
+        id={data.id}
+        content={data.content}
+        author={data.author}
+        height={data.height}
+        width={data.width}
+        alt={data.alt}
+        title={data.title}
+        cat={data.category}
+        image={data.image}
+        url={`/articles/${data.id}`}
+      />
+    )
+  );
+
   return (
     <>
-      <section className="intro-container theme--black">
-        <hgroup className="intro">
-          {content && (
-            <p className="ariane">
-              <span className="is-active">{active}</span> {txt}
-            </p>
-          )}
-          <h1 className="heading-1 title">{title}</h1>
-        </hgroup>
-      </section>
+      <section>{dataList}</section>
     </>
   );
 }

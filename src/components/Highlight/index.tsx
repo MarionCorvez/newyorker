@@ -28,10 +28,10 @@ export default async function Highlight() {
   );
 
   // Latest 4 posts except 1st
-  const latest = datas.slice(1, 5);
+  // const latest = datas.slice(1, 5);
 
   // const dataList = aviation.map(
-  const dataList = latest.map(
+  const dataList = isFeatured.map(
     (data: {
       id: number;
       content: string;

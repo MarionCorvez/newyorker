@@ -4,17 +4,18 @@
    ==================================== */
 
 .card {
-  height: var(--height);
+  //height: var(--height);
 
   :where(.container) {
     --gap: var(--s-base);
     box-sizing: border-box;
     @extend %flex-column;
+    height: var(--height);
   }
 
   :where(.media-wrapper) {
-    --height: 50vh;
     height: var(--height);
+    //--height: 50vh;
     overflow: hidden;
     border-radius: 2px;
   }
@@ -22,17 +23,12 @@
   :where(.media) {
     height: var(--height);
     min-height: 100%;
-    filter: saturate(70%) contrast(90%);
+    filter: saturate(80%) contrast(90%);
   }
 
   :where(.txt-wrapper) {
     --gap: var(--s-sm);
     @extend %flex-column;
-  }
-
-  :where(.link-wrapper) {
-    @extend %flex;
-    height: 30px;
   }
 }
 
@@ -109,10 +105,10 @@
 /* $Card Background
    ==================================== */
 
-.card--background {
+// card-background = Section Essay
+.card-background {
   :where(.container) {
-    --justify: end;
-    height: var(--height);
+    --height: 100vh;
     min-height: 0px;
     position: relative;
     text-shadow: 1px 1px var(--carbon);
@@ -128,13 +124,37 @@
   }
 
   :where(.txt-wrapper) {
-    color: var(--white);
+    text-align: center;
     padding: var(--s-base);
-    align-items: start;
   }
 
   :where(.details) {
     max-width: 400px;
+  }
+}
+
+/* $Card Hero
+   ==================================== */
+
+// With card-background = Hero
+.card-hero {
+  :where(.container) {
+    --justify: end;
+    align-items: center;
+    @include a.bp(large) {
+      --height: calc(100vh - var(--s-header));
+      --justify: center;
+      align-items: start;
+    }
+  }
+
+  :where(.txt-wrapper) {
+    align-items: center;
+    @include a.bp(large) {
+      --justify: baseline;
+      width: 50%;
+      margin-top: var(--s-xxl);
+    }
   }
 }
 
@@ -324,8 +344,6 @@
 .card-col {
 }
 
-.card-hero {
-}
 .card-split {
 }
 

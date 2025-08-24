@@ -21,14 +21,14 @@ export default async function PostsFeatured() {
       width: number;
       alt: string;
       title: string;
-      cat: string;
+      category: string;
       image: string;
       url: string;
       author: string;
       cls: string;
     }) => (
       <Card
-        cls="card card--background"
+        cls="card-background theme--background"
         key={data.id}
         id={data.id}
         content={data.content}
@@ -37,7 +37,7 @@ export default async function PostsFeatured() {
         width={data.width}
         alt={data.alt}
         title={data.title}
-        cat={data.cat}
+        cat={data.category}
         image={data.image}
         url={`/articles/${data.id}`}
       />
@@ -46,7 +46,7 @@ export default async function PostsFeatured() {
 
   return (
     <>
-      <section className="gallery gallery-area">
+      <section className="gallery ">
         <div className="panel">{dataList}</div>
       </section>
     </>

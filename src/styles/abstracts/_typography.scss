@@ -5,6 +5,7 @@
 */
 
 :root {
+  --f-xsm: clamp(0.7rem, 0.18vi + 0.66rem, 0.8rem); // 11
   --f-sm: clamp(0.88rem, 0.34vi + 0.79rem, 1.06rem); // 14
   --f-base: clamp(0.94rem, 0.45vi + 0.82rem, 1.19rem); // body - 15
   --f-md: clamp(1.13rem, 0.11vi + 1.1rem, 1.19rem); // h4 - 18

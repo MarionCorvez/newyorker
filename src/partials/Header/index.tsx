@@ -1,9 +1,9 @@
-import Nav from "@/components/Nav";
+import NavPrimary from "@/components/NavPrimary";
 
 export default function Header() {
   return (
-    <header className="header">
-      <Nav />
+    <header>
+      <NavPrimary />
     </header>
   );
 }

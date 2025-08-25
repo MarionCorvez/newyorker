@@ -1,44 +1,24 @@
 @use "../../styles/abstracts/index.scss" as a;
 
-//Primary
-
-.nav-container {
-  /*   --cols: 3;
-  --gap: var(--s-md);
-  font-size: var(--f-sm);
-  @extend %grid;
-
-  :where(.logo-wrapper) {
-    grid-column: 2;
-    justify-self: center;
-  }
-  :where(.logo) {
-    width: clamp(9.7rem, calc(7.155rem + 12.727vw), 16.7rem);
-    height: clamp(0.88rem, calc(0.655rem + 1.127vw), 1.5rem);
-  }
-  :where(.button) {
-    width: 3rem;
-    color: currentColor;
-  } */
-}
-
-.nav-primary {
+.nav {
   display: none;
 
-  @include a.bp(large) {
-    grid-column: 3;
-    display: flex;
-    justify-content: end;
-    gap: var(--s-base);
-  }
-
   :where(.link) {
-    padding-bottom: 1px;
     border-bottom: 1px solid transparent;
   }
   :where(.link:hover),
   :where(.is--active) {
+    //--color: var(--buccaneer-blue);
     border-bottom: 1px solid currentColor;
+  }
+}
+
+.nav-primary {
+  @include a.bp(large) {
+    grid-column: 9 / 13;
+    display: flex;
+    justify-content: end;
+    gap: var(--s-base);
   }
   :where(.link:last-child) {
     border-bottom: none;

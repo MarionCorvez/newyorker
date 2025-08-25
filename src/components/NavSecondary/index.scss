@@ -1,14 +1,11 @@
 @use "../../styles/abstracts/index.scss" as a;
 
 .nav-secondary {
-  display: none;
-
   @include a.bp(large) {
     display: flex;
     gap: 0.5rem;
     justify-content: space-between;
     padding: var(--s-sm) var(--s-base);
-    background-color: var(--white);
     border-bottom: 1px solid var(--c-border);
     box-sizing: border-box;
     width: 100%;
@@ -16,12 +13,6 @@
 
   :where(.link-secondary) {
     font-size: var(--f-xsm);
-    border-bottom: 1px solid transparent;
-  }
-
-  :where(.link:hover),
-  :where(.is--active) {
-    border-bottom: 1px solid currentColor;
   }
 }
 
@@ -42,7 +33,7 @@
   top: var(--s-header);
   width: 100%;
   height: calc(100vh - var(--s-header));
-  background: var(--white);
+  background-color: light-dark(var(--white), var(--dark-tone-ink));
 
   :where(.nav-secondary) {
     top: 0;
@@ -57,5 +48,10 @@
     font-size: var(--f-base);
     font-family: var(--f-tny);
     text-transform: uppercase;
+  }
+
+  :where(.link-secondary:hover) {
+    --color: var(--buccaneer-blue);
+    border-color: var(--buccaneer-blue);
   }
 }

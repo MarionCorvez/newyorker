@@ -16,6 +16,7 @@
   --dark-tone-ink: rgb(18, 18, 18);
   --kingly-cloud: rgb(223, 223, 223);
   --infrared-burn: rgb(219, 51, 52); /* brand */
+  --buccaneer-blue: rgb(7, 88, 139); /* link */
   --speed-light: rgb(246, 244, 239); /* fiction */
   --black-chestnut-oak: rgb(36, 35, 31); /* fiction */
 
@@ -29,8 +30,9 @@
 }
 
 body /* theme--light */,
-header,
 .theme--black,
+.header,
+.theme--light,
 .theme--speed-light,
 //.theme--background,
 button,
@@ -54,6 +56,12 @@ input {
   :where(.author) {
     color: var(--c-author);
   }
+}
+
+// header
+.theme--light {
+  --foreground: light-dark(var(--black), var(--white));
+  --background: light-dark(var(--white), var(--dark-tone-ink));
 }
 
 // footer / card-split

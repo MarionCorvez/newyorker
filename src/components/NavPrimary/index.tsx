@@ -12,22 +12,14 @@ export default function NavPrimary() {
   // Manage active links
   const pathname = usePathname();
 
-  // Manage mobile menu
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
-
   // Manage static header
   if (typeof window !== "undefined") {
+    const isLight = window.matchMedia("(prefers-color-scheme: light)").matches;
     const [isScroll, setIsScroll] = useState(false);
 
     const handleScroll = () => {
       const scrolled = window.scrollY;
-      setIsScroll(scrolled > 200);
+      setIsScroll(scrolled > 10);
     };
 
     useEffect(() => {
@@ -36,9 +28,25 @@ export default function NavPrimary() {
       return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    // Manage mobile menu
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const toggleMenu = () => {
+      setIsMenuOpen(!isMenuOpen);
+      document.body.classList.toggle("has--no-scroll");
+      setIsScroll(true);
+    };
+    const closeMenu = () => {
+      setIsMenuOpen(false);
+      setIsScroll(!isScroll);
+    };
+
     return (
       <>
-        <div className={`header ${isScroll ? "is--scroll" : "is--unscroll"}`}>
+        <div
+          className={`header ${
+            isScroll || isMenuOpen ? "is--scroll" : "is--unscroll"
+          }`}
+        >
           <div className="header-container">
             <button
               className="button"
@@ -55,7 +63,7 @@ export default function NavPrimary() {
               aria-label="Access to Home page"
               onClick={closeMenu}
             >
-              {isScroll ? (
+              {isScroll && isLight ? (
                 <Image
                   className="logo"
                   src="/icons/logo-anniver-100.svg"
@@ -75,7 +83,7 @@ export default function NavPrimary() {
             </Link>
 
             <nav
-              className="nav-primary"
+              className="nav nav-primary"
               role="navigation"
               aria-label="Primary navigation"
             >
@@ -125,6 +133,11 @@ export default function NavPrimary() {
         {isMenuOpen ? (
           <div className="is--mobile">
             <NavSecondary />
+            <ul>
+              <li>Search</li>
+              <li>Sign in</li>
+              <li>Newsletter</li>
+            </ul>
           </div>
         ) : (
           <NavSecondary />

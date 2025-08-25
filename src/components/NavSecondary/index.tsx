@@ -26,7 +26,9 @@ export default function NavSecondary() {
 
   return (
     <nav
-      className={`nav-secondary ${pathname !== `/` ? "is--top" : "is--bottom"}`}
+      className={`nav nav-secondary ${
+        pathname !== `/` ? "is--top" : "is--bottom"
+      }`}
       role="navigation"
       aria-label="Secondary navigation"
     >

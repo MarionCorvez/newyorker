@@ -5,39 +5,46 @@
   width: 100%;
   height: var(--s-header);
   position: fixed;
-  top: 0;
-  padding: var(--s-sm);
-  background-color: var(--background);
+  padding: var(--s-base);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header-container {
-  --cols: 3;
-  --gap: var(--s-md);
+  --cols: 12;
+  --gap: var(--s-sm);
   font-size: var(--f-sm);
   @extend %grid;
-  align-items: center;
+  width: 100%;
 
   :where(.logo-wrapper) {
-    grid-column: 2;
-    justify-self: center;
+    grid-column: 3 / 11;
+
+    @include a.bp(large) {
+      grid-column: 5 / 9;
+    }
   }
   :where(.logo) {
     width: clamp(9.7rem, calc(7.155rem + 12.727vw), 16.7rem);
     height: clamp(0.88rem, calc(0.655rem + 1.127vw), 1.5rem);
+    place-self: center;
   }
   :where(.button) {
     width: 3rem;
     height: fit-content;
     color: currentColor;
+    @include a.bp(large) {
+      display: none;
+    }
   }
 }
 
 .is--unscroll {
   --background: transparent;
-  color: var(--white);
+  --foreground: var(--white);
 }
 
 .is--scroll {
-  --background: var(--white);
   box-shadow: var(--c-border) 0px 1px 5px 0px;
 }
